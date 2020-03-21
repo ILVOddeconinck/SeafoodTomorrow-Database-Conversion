@@ -30,8 +30,11 @@ data$Scientific_name = gsub(" ", "_", data$Scientific_name)
 SequenceID = paste(data$Scientific_name,"_",data$Specimen_code,"_",data$Gene, sep = "")
 
 #Create a database with the sequence ID and the Sequences.
-Database = cbind(SequenceID, data$Sequence)
+Database = data.frame(SequenceID, data$Sequence)
 colnames(Database) = c("SequenceID", "Sequence")
+
+#Remove empty rows
+Database = Database[!(Database$Sequence == ""), ]
 
 #Turn this database into a fasta format
 df.fasta = dataframe2fas(Database, file = "Database.txt")
