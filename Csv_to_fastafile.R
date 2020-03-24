@@ -1,6 +1,12 @@
 #######################
 #Required packeges
 
+install.packages("seqRFLP")
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+
+BiocManager::install("Biostrings")
+
 library("seqRFLP")
 library("Biostrings")
 
