@@ -46,5 +46,5 @@ Database = Database[!(Database$Sequence == ""), ]
 df.fasta = dataframe2fas(Database, file = "Database.txt")
 DatabaseFasta = readDNAStringSet("Database.txt")
 
-#Write the FASTA file into the map. Note that you can put this anywhere you want.
+#Write the FASTA file into the folder. Note that you can put this anywhere you want.
 writeXStringSet(DatabaseFasta,filepath = "SeafoodtomorrowDB.fasta")
